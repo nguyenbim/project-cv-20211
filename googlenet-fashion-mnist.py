@@ -68,8 +68,7 @@ aug = ImageDataGenerator(width_shift_range = 0.1, height_shift_range = 0.1,
 # construct the set of callbacks
 figPath = os.path.sep.join([args["output"], "{}.png".format(os.getpid())])
 jsonPath = os.path.sep.join([args["output"], "{}.json".format(os.getpid())])
-callbacks = [TrainingMonitor(figPath, jsonPath = jsonPath),
-    LearningRateScheduler(poly_decay)]
+callbacks = [LearningRateScheduler(poly_decay)]
 
 # initialize the optimizer and model
 print("[INFO] compiling model...")
